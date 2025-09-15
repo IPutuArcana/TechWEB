@@ -1,1 +1,341 @@
+/* style.css */
 
+/* 1. CSS Variables and Global Styles */
+:root {
+    --dark-blue: #061f4a;
+    --off-white: #dce4ef;
+    --accent-cyan: #02bfe7;
+    --accent-gold: #f9aa43;
+    --text-primary: 'Roboto', sans-serif;
+    --heading-primary: 'Roboto Slab', serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--text-primary);
+    background-color: var(--dark-blue);
+    color: var(--off-white);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    font-family: var(--heading-primary);
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--accent-cyan);
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+a {
+    color: var(--accent-cyan);
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 2. Header, Navigation, and Footer Styles */
+header {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 1rem 0;
+    border-bottom: 2px solid var(--accent-cyan);
+}
+
+header.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for navigation */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-gold);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+nav ul li a:hover {
+    color: var(--accent-gold);
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Style for the active page link */
+nav ul li a.active {
+    color: var(--accent-gold);
+    border-bottom: 2px solid var(--accent-gold);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid #323a45;
+}
+
+/* 3. Homepage Styles */
+.hero {
+    height: 60vh;
+    background-image: url('assets/hero-banner.jpg'); /* Replace with a chosen high-res image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+.hero-text {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+.hero-text h2 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.highlights {
+    padding: 3rem 0;
+}
+
+.discoveries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.discovery-card {
+    background-color: #0b3d91; /* A darker shade of blue */
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.discovery-card:hover {
+    transform: translateY(-5px);
+}
+
+.discovery-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.discovery-card h3,.discovery-card p {
+    padding: 1rem;
+}
+
+.discovery-card h3 {
+    color: var(--accent-cyan);
+    font-size: 1.2rem;
+}
+
+/* 4. About Page Styles */
+.about-intro {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+/* Flexbox implementation for two-column layout */
+.about-container {
+    display: flex;
+    gap: 3rem;
+}
+
+.pioneers-column,.planets-column {
+    flex: 1; /* Each column will take up equal space */
+}
+
+.pioneers-column ul {
+    list-style-type: none;
+}
+
+.pioneers-column li {
+    background-color: #0b3d91;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--accent-cyan);
+    border-radius: 0 4px 4px 0;
+}
+
+/* Styling the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+table th, table td {
+    padding: 0.8rem;
+    text-align: left;
+    border-bottom: 1px solid #323a45;
+}
+
+table th {
+    background-color: #0b3d91;
+    color: var(--accent-cyan);
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #0c4aae21; /* A very subtle alternating row color */
+}
+
+/* 5. Contact Page Styles */
+.contact-page-container {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+    margin-top: 3rem;
+}
+
+.contact-info,.contact-form-section {
+    flex: 1;
+}
+
+.contact-info img {
+    margin-top: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--accent-cyan);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #0b3d91;
+    border: 1px solid #323a45;
+    border-radius: 4px;
+    color: var(--off-white);
+    font-family: var(--text-primary);
+    font-size: 1rem;
+}
+
+.form-group input:focus,.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: var(--accent-gold);
+    color: var(--dark-blue);
+    font-family: var(--heading-primary);
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ffc375; /* Lighter gold */
+}
+
+/* 6. Responsive Design - Media Query */
+@media (max-width: 768px) {
+    /* General adjustments */
+    h2 {
+        font-size: 2rem;
+    }
+
+   .container {
+        width: 95%;
+    }
+
+    /* Header and Navigation */
+    header.container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    /* About Page: Stack the two columns */
+   .about-container {
+        flex-direction: column;
+    }
+
+    /* Contact Page: Stack the two sections */
+   .contact-page-container {
+        flex-direction: column;
+    }
+
+   .contact-info img {
+        margin-bottom: 2rem;
+    }
+}
