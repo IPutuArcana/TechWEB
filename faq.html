@@ -4,6 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Title | Celestial Explorations</title>
+    <style>
+        
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #D2D2D2;
+            background-image:
+            repeating-linear-gradient(
+                to right, transparent 0 100px,
+                #25283b22 100px 101px
+            ),
+            repeating-linear-gradient(
+                to bottom, transparent 0 100px,
+                #25283b22 100px 101px
+            );
+        }
+        
+        body::before{
+            position: absolute;
+            width: min(1400px, 90vw);
+            top: 10%;
+            left: 50%;
+            height: 90%;
+            transform: translateX(-50%);
+            content: '';
+            background-image: url(assets/planets/GC.jpeg);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: top center;
+            pointer-events: none;
+        }
+    </style>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,15 +62,19 @@
    <main>
     <div class="interactive">
         <div class="banner">
-            <div class="slider">
-                <div class="item"><img src="assets/planets/GC.jpeg" alt="Image 1"></div>
-                <div class="item"><img src="assets/planets/sun.jpeg" alt="Image 2"></div>
-                <div class="item"><img src="assets/planets/mercury.jpeg" alt="Image 3"></div>
+            <div class="slider" style="--quantity: 10;">
+                <div class="item" style="--position: 1;"><img src="assets/planets/GC.jpeg" alt="Image 1"></div>
+                <div class="item" style="--position: 2;"><img src="assets/planets/sun.jpeg" alt="Image 2"></div>
+                <div class="item" style="--position: 3;"><img src="assets/planets/mercury.jpeg" alt="Image 3"></div>
+                <div class="item" style="--position: 4;"><img src="assets/planets/venus.jpeg" alt="Image 4"></div>
+                <div class="item" style="--position: 5;"><img src="assets/planets/earth.jpeg" alt="Image 5"></div>
+                <div class="item" style="--position: 6;"><img src="assets/planets/mars.jpeg" alt="Image 6"></div>
+                <div class="item" style="--position: 7;"><img src="assets/planets/jupiter.jpeg" alt="Image 7"></div>
+                <div class="item" style="--position: 8;"><img src="assets/planets/saturn.jpeg" alt="Image 8"></div>
+                <div class="item" style="--position: 9;"><img src="assets/planets/uranus.jpeg" alt="Image 9"></div>
+                <div class="item" style="--position: 10;"><img src="assets/planets/neptune.jpeg" alt="Image 10"></div>
             </div>
-
         </div>
-
-
     </div>
 </main>
 
